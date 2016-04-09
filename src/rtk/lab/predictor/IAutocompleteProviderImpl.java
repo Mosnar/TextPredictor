@@ -1,6 +1,6 @@
 package rtk.lab.predictor;
 
-import rtk.lab.trie.RanTrie;
+import rtk.lab.predictor.RanTrie;
 
 import java.util.List;
 
@@ -16,9 +16,7 @@ public class IAutocompleteProviderImpl implements IAutocompleteProvider {
 
     @Override
     public List<ICandidate> getWords(String fragment) {
-        List<ICandidate> results = null;
-        this.trie.search(fragment);
-        return results;
+        return this.trie.getCandidates(fragment);
     }
 
     @Override

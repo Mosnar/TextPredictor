@@ -1,6 +1,7 @@
 package rtk.lab.predictor;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by ransom on 4/8/16.
@@ -80,7 +81,7 @@ public class RanTrie {
      * @param node
      * @return
      */
-    public ICandidate[] getCandidates(Node node) {
+    public List<ICandidate> getCandidates(Node node) {
         if (!node.isSentinel()) return null;
 
         return null;
@@ -91,7 +92,7 @@ public class RanTrie {
      * @param string
      * @return
      */
-    public ICandidate[] getCandidates(String string) {
+    public List<ICandidate> getCandidates(String string) {
         return getCandidates(this.search(string));
     }
 
