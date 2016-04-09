@@ -80,7 +80,7 @@ public class RanTrie {
     public ICandidate[] getCandidates(Node node) {
         if (!node.isSentinel()) return null;
 
-
+        return null;
     }
 
     /**
