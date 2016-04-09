@@ -1,13 +1,14 @@
-package rtk.lab.trie;
+package rtk.lab.predictor;
 
 import java.util.HashMap;
 
 /**
  * Created by ransom on 4/8/16.
  */
-public class Node {
+class Node {
     private char character;
     private HashMap<Character, Node> children = new HashMap<>();
+    private Node parent;
     private boolean sentinel;
     private int occurrence = 0;
 
@@ -52,5 +53,13 @@ public class Node {
 
     void incrementOccurrence() {
         this.setOccurrence(this.getOccurrence() + 1);
+    }
+
+    public Node getParent() {
+        return parent;
+    }
+
+    public void setParent(Node parent) {
+        this.parent = parent;
     }
 }
