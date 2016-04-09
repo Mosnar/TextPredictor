@@ -26,11 +26,15 @@ public class RanTrie {
             }
 
             children = node.getChildren();
-            if (i == word.length() - 1) {
+            if (i == (word.length() - 1)) {
                 node.setSentinel(true);
                 node.incrementOccurrence();
             }
         }
+    }
+
+    public String[] searchPrefix(String prefix) {
+        return null;
     }
 
     public Node search(String needle) {
