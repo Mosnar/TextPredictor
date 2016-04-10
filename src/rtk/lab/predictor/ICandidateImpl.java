@@ -12,13 +12,13 @@ public class ICandidateImpl implements ICandidate {
         return this.word;
     }
 
+    public void setWord(String word) {
+        this.word = word;
+    }
+
     @Override
     public int getConfidence() {
         return this.confidece;
-    }
-
-    public void setWord(String word) {
-        this.word = word;
     }
 
     public void setConfidece(int confidece) {
@@ -26,6 +26,6 @@ public class ICandidateImpl implements ICandidate {
     }
 
     public String toString() {
-        return "\""+this.getWord() + "\" (" + this.getConfidence() + ")";
+        return "\"" + this.getWord() + "\" (" + this.getConfidence() + ")";
     }
 }

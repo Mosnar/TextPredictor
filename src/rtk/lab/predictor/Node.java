@@ -12,7 +12,8 @@ class Node {
     private boolean sentinel;
     private int occurrence = 0;
 
-    Node() {}
+    Node() {
+    }
 
     Node(char character) {
         this.character = character;

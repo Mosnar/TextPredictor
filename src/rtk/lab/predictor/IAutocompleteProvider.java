@@ -8,6 +8,7 @@ import java.util.List;
 public interface IAutocompleteProvider {
     /**
      * Returns list of autocomplete candidates ordered by confidence
+     *
      * @param fragment partial text
      * @return List of candidates
      */
@@ -15,6 +16,7 @@ public interface IAutocompleteProvider {
 
     /**
      * Trains the algorithm with the provided passage
+     *
      * @param passage Seed text
      */
     void train(String passage);
