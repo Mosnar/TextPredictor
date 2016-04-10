@@ -21,11 +21,11 @@ public class ICandidateImpl implements ICandidate {
         this.word = word;
     }
 
-    public void setConfidence(int confidece) {
+    public void setConfidece(int confidece) {
         this.confidece = confidece;
     }
 
     public String toString() {
-        return this.getWord() + " (" + this.getConfidence() + ")";
+        return "\""+this.getWord() + "\" (" + this.getConfidence() + ")";
     }
 }

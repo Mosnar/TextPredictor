@@ -13,7 +13,6 @@ public class RanTrie {
     }
 
     /**
-     *
      * @param word
      */
     public void add(String word) {
@@ -40,7 +39,6 @@ public class RanTrie {
     }
 
     /**
-     *
      * @param word
      * @return if word is in trie
      */
@@ -50,7 +48,6 @@ public class RanTrie {
     }
 
     /**
-     *
      * @param needle
      * @return Node to needle
      */
@@ -72,7 +69,6 @@ public class RanTrie {
     }
 
     /**
-     *
      * @param node
      * @return
      */
@@ -84,8 +80,8 @@ public class RanTrie {
 
         Iterator it = children.entrySet().iterator();
         while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
-            result.addAll(this.getCandidates((Node)pair.getValue()));
+            Map.Entry pair = (Map.Entry) it.next();
+            result.addAll(this.getCandidates((Node) pair.getValue()));
             it.remove();
         }
 
@@ -93,20 +89,18 @@ public class RanTrie {
     }
 
     /**
-     *
      * @param node
      * @return
      */
     private ICandidate nodeToCandidate(Node node) {
         ICandidateImpl c = new ICandidateImpl();
         c.setWord(this.getWord(node));
-        c.setConfidence(node.getOccurrence());
+        c.setConfidece(node.getOccurrence());
 
         return c;
     }
 
     /**
-     *
      * @param string
      * @return
      */
@@ -115,7 +109,6 @@ public class RanTrie {
     }
 
     /**
-     *
      * @param node
      * @return
      */
