@@ -1,7 +1,5 @@
 package rtk.lab.predictor;
 
-import rtk.lab.predictor.RanTrie;
-
 import java.util.List;
 
 /**
@@ -10,8 +8,13 @@ import java.util.List;
 public class IAutocompleteProviderImpl implements IAutocompleteProvider {
     private RanTrie trie;
 
-    void IAutocompleteProvider() {
+    public IAutocompleteProviderImpl() {
         this.trie = new RanTrie();
+    }
+
+    public IAutocompleteProviderImpl(String passage) {
+        this.trie = new RanTrie();
+        this.train(passage);
     }
 
     @Override
@@ -23,7 +26,7 @@ public class IAutocompleteProviderImpl implements IAutocompleteProvider {
     public void train(String passage) {
         String[] words = passage.split("\\s+");
         for (String word : words) {
-            trie.add(word);
+            this.trie.add(word.toLowerCase().replaceAll("[^a-z]", ""));
         }
     }
 }

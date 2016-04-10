@@ -1,7 +1,6 @@
 package rtk.lab.predictor;
 
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by ransom on 4/8/16.
@@ -38,10 +37,6 @@ public class RanTrie {
                 node.incrementOccurrence();
             }
         }
-    }
-
-    public String[] searchPrefix(String prefix) {
-        return null;
     }
 
     /**
@@ -82,9 +77,32 @@ public class RanTrie {
      * @return
      */
     public List<ICandidate> getCandidates(Node node) {
-        if (!node.isSentinel()) return null;
+        List<ICandidate> result = new ArrayList<>();
 
-        return null;
+        HashMap<Character, Node> children = node.getChildren();
+        if (node.isSentinel()) result.add(this.nodeToCandidate(node));
+
+        Iterator it = children.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            result.addAll(this.getCandidates((Node)pair.getValue()));
+            it.remove();
+        }
+
+        return result;
+    }
+
+    /**
+     *
+     * @param node
+     * @return
+     */
+    private ICandidate nodeToCandidate(Node node) {
+        ICandidateImpl c = new ICandidateImpl();
+        c.setWord(this.getWord(node));
+        c.setConfidence(node.getOccurrence());
+
+        return c;
     }
 
     /**

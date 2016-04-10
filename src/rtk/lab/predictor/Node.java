@@ -27,14 +27,6 @@ class Node {
         return character;
     }
 
-    public void setCharacter(char character) {
-        this.character = character;
-    }
-
-    public void setChildren(HashMap<Character, Node> children) {
-        this.children = children;
-    }
-
     public boolean isSentinel() {
         return sentinel;
     }

@@ -4,15 +4,28 @@ package rtk.lab.predictor;
  * Created by Ransom on 4/8/16.
  */
 public class ICandidateImpl implements ICandidate {
-
+    private String word;
+    private int confidece;
 
     @Override
     public String getWord() {
-        return null;
+        return this.word;
     }
 
     @Override
     public int getConfidence() {
-        return 0;
+        return this.confidece;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    public void setConfidence(int confidece) {
+        this.confidece = confidece;
+    }
+
+    public String toString() {
+        return this.getWord() + " (" + this.getConfidence() + ")";
     }
 }
