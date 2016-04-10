@@ -2,10 +2,11 @@ package rtk.lab.predictor;
 
 /**
  * Created by Ransom on 4/8/16.
+ * Stores a word candidate and its confidence level
  */
 public class ICandidateImpl implements ICandidate {
     private String word;
-    private int confidece;
+    private int confidence;
 
     @Override
     public String getWord() {
@@ -18,13 +19,17 @@ public class ICandidateImpl implements ICandidate {
 
     @Override
     public int getConfidence() {
-        return this.confidece;
+        return this.confidence;
     }
 
-    public void setConfidece(int confidece) {
-        this.confidece = confidece;
+    public void setConfidence(int confidence) {
+        this.confidence = confidence;
     }
 
+    /**
+     * Creates a pretty output for this candidate similar to the output from the Asymmetrik example
+     * @return String with word and confidence
+     */
     public String toString() {
         return "\"" + this.getWord() + "\" (" + this.getConfidence() + ")";
     }

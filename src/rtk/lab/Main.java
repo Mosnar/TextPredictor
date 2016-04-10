@@ -10,13 +10,17 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
+        String seed = "The third thing that I need to tell you is that this thing does not think thoroughly.";
+        String partial = "th";
+
+        // Create a new instance of the autocomplete implementation and train it on the seed
         IAutocompleteProvider auto = new IAutocompleteProviderImpl();
-        String seed = "Dog doggy dogs dog";
         auto.train(seed);
-        String term = "dog";
-        List<ICandidate> words = auto.getWords(term);
+
+        // Get words from the partial seed, sort them based on confidence, and print
+        List<ICandidate> words = auto.getWords(partial);
         Collections.sort(words, (ICandidate c1, ICandidate c2) -> Integer.compare(c2.getConfidence(), c1.getConfidence()));
-        System.out.print("Input: " + term + " --> ");
+        System.out.print("Input: " + partial + " --> ");
         words.forEach(e -> System.out.print(e.toString() + " "));
         System.out.print("\r\n");
     }
