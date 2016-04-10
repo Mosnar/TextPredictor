@@ -9,10 +9,12 @@ It might be interesting to add a buffer pool layer on top of this to cache frequ
 
 ## Installation
 
-Clone the repo and run 
-
-Note: Java 8 is necessary for the use of lambda expressions
+Clone the repo and run `mvn package` to build with maven
 
 ## Usage
 
-TODO: Write usage instructions
+Run with:
+`java -jar target/TextPredictor-1.0-SNAPSHOT-jar-with-dependncies.jar --training-string "TRAINING STRING" --fragment "fragment"`
+
+Example Parameters:
+`--training-string "The third thing that I need to tell you is that this thing does not think thoroughly." --fragment "th"`

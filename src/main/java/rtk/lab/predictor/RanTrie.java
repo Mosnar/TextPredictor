@@ -98,6 +98,7 @@ public class RanTrie {
      */
     public List<ICandidate> getCandidates(Node node) {
         List<ICandidate> result = new ArrayList<>();
+        if(node == null) return result;
 
         HashMap<Character, Node> children = node.getChildren();
         // If the node supplied is a word, we need to add it as a possibility.
